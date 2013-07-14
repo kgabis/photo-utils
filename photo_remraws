@@ -1,0 +1,16 @@
+#!/bin/bash
+
+RAWS=rawy/*.NEF
+for raw in $RAWS
+do
+    echo -n "Checking $raw - "
+    rawb=$(basename $raw)
+    jpg="${rawb%%.*}.JPG"
+    if [ ! -f $jpg ];
+    then
+	echo "$jpg not found! Removing $rawb"
+	rm $raw
+    else
+	echo "$jpg found."
+    fi
+done

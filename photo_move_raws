@@ -1,0 +1,4 @@
+#!/bin/bash
+mkdir rawy
+mv *.NEF rawy
+echo DONE!
