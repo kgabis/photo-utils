@@ -1,0 +1,4 @@
+#!/bin/bash
+mkdir resized
+convert "$1" -verbose -resize 2464x2464\> -unsharp 2x0.5+0.7+0 -quality 90 "resized/$1"
+echo DONE!

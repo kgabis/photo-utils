@@ -1,6 +1,7 @@
 #!/bin/bash
 
 RAWS=raws/*.NEF
+mkdir orphaned_raws
 for raw in $RAWS
 do
     echo -n "Checking $raw - "
@@ -8,8 +9,8 @@ do
     jpg="${rawb%%.*}.JPG"
     if [ ! -f $jpg ];
     then
-	echo "$jpg not found! Removing $rawb"
-	rm $raw
+	echo "$jpg not found! Moving $rawb"
+	mv $raw orphaned_raws
     else
 	echo "$jpg found."
     fi

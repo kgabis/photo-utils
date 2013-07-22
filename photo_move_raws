@@ -1,4 +1,4 @@
 #!/bin/bash
-mkdir rawy
-mv *.NEF rawy
+mkdir raws
+mv *.NEF raws
 echo DONE!

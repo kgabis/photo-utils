@@ -1,0 +1,6 @@
+#!/bin/bash
+#http://blog.hugochinchilla.net/2011/09/time-lapse-videos-mencoder/
+
+mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell:autoaspect:vqscale=3 -vf scale=1920:1280 -mf type=jpeg:fps=20 'mf://*.JPG' -o time-lapse.avi
+
+#http://superuser.com/questions/249101/how-can-i-combine-30-000-images-into-a-timelapse-movie
