@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Pass raw extension as a argument."    
+    exit 1
+fi
+
 mkdir raws
-mv *.NEF raws
+mv *.$1 raws
 echo DONE!

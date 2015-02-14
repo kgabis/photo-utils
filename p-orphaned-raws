@@ -1,6 +1,11 @@
 #!/bin/bash
 
-RAWS=raws/*.NEF
+if [ $# -ne 1 ]; then
+    echo "Pass raw extension as a argument."    
+    exit 1
+fi
+
+RAWS=raws/*.$1
 mkdir orphaned_raws
 for raw in $RAWS
 do

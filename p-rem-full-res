@@ -1,0 +1,15 @@
+#!/bin/bash
+# Removes photos with no matching photo in resized folder
+PHOTOS=*.JPG
+for photo in $PHOTOS
+do
+    echo -n "Checking $photo - "
+    small="resized/$photo"
+    if [ ! -f $small ];
+    then
+	echo "$small not found! Removing $photo"
+	rm $photo
+    else
+	echo "$small found."
+    fi
+done
